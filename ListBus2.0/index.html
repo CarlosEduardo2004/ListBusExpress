@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="icon" href="bus.png">
+
+    <title>Lista do Busão</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="items-text">
+            <h1>Lista do  Busão</h1>
+            <img src="bus.png" alt="" id="icon-bus">
+        </div>
+    </header>
+    <!-- grupos -->
+    <div class="grupos">
+        <!-- grupo a -->
+        <details id="details-grupo-a">
+            <summary id="sumary-grupo-a">Grupo - A</summary>
+            <div action="index.html" method="POST">
+                <ol id="pessoas-grupo-a"></ol>
+                <input id="btn-grupo-a" type="submit" class="btn-check" onclick="enviarA()"></input>
+            </div>
+        </details>
+
+        <!-- grupo b -->
+        <details id="details-grupo-b">
+            <summary id="sumary-grupo-b">Grupo - B</summary>
+            <div action="index.html" method="POST">
+                <ol id="pessoas-grupo-b"></ol>
+                <input id="btn-grupo-b" type="submit" class="btn-check" onclick="enviarB()"></input>
+            </div>
+        </details>
+    </div>
+
+    <!-- formulario sugestão -->
+    <form action="https://api.staticforms.xyz/submit" method="POST">
+        <input type="hidden" name="redirectTo" value="https://busaoexpress.netlify.app/" />
+        <input type="hidden" name="accessKey" value="15e2b8b3-fb82-4285-93ec-aef88b9e346d">
+        <div class="sugestao">
+            <div class="icon-sugestao">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="feather feather-message-square">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <p>Alguma sugestão?</p>
+            </div>
+            <input type="email" name="email" class="input-email"requerid placeholder="Seu e-mail">
+            <textarea class="textarea" placeholder="Deixe sua sugestão" name="message" maxlength="200"></textarea>
+        </div>
+        <button id="btn-form" type="submit">Enviar mensagem</button>
+    </form>
+
+    <!-- modal -->
+    <div class="bg-modal">
+
+        <div class="modal">
+            <p id="text-modal"></p>
+            <svg onclick="fecharModal()" id="icon-modal" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" class="feather feather-x">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <p>© Carlos Eduardo & Francisco Cruz 2022.</p>
+    </footer>
+
+    <!-- scripts -->
+    <script src="index.js"></script>
+</body>
+
+</html>
